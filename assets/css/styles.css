@@ -24,6 +24,11 @@
     }
   }
 
-  #footer {
+#footer {
       text-align: center;
-  }
+}
+
+#results {
+    margin: 25px;
+    margin-bottom: 50px;
+}

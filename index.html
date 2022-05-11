@@ -15,12 +15,12 @@
         <div class="container-fluid">
           <a class="navbar-brand">Crypto Market App</a>
           <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-primary" type="submit">Search</button>
+                <input id="searchCoinID" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
           </form>
         </div>
       </nav>
-    <ma in>
+    <main>
         <section class="welcome">
             <div class="container col-xxl-8 px-4 py-5">
                 <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
@@ -29,7 +29,7 @@
                     </div>
                     <div class="col-lg-6">
                         <h1 class="display-5 fw-bold lh-1 mb-3">Welcome to Crypto Market App!</h1>
-                        <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                        <p class="lead">Your #1 source for Cryptocurrency news updates, and market cap.</p>
                         <a class="btn btn-primary" href="#explore" role="button">Explore Cryptos</a>
                   </div>
                 </div>
@@ -41,32 +41,34 @@
         <section class="search">
             <div class="px-4 py-5 my-5 text-center">
                 <div id="explore">
-                    <h1 class="display-5 fw-bold">Top 7 Cryptocurrencies</h1>
+                    <h1 class="display-5 fw-bold">Search for thousands of crypto coins.</h1>
                     <div class="col-lg-6 mx-auto">
-                        <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                        <p class="lead mb-4">Get the latest price changes and market capitalization from your favorite crypto coins.</p>
                     </div>
                     <div class="d-grid gap-2 d-lg-flex justify-content-lg-center">
                         <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <input id="searchCoinID" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-primary" type="submit">Search</button>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="results">
+        <section id="results">
             <div class="list-group">
                 <a href="#" class="list-group-item list-group-item-action">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small>3 days ago</small>
-                  </div>
+                    <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">My Fav Crypto Coin</h5>
+                        <small>Market Cap Rank:</small>
+                    </div>
                   <p class="mb-1">Some placeholder content in a paragraph.</p>
                   <small>And some small print.</small>
                 </a>
-              </div>
+            </div>
         </section>
+
         <div class="b-example-divider"></div>
+
     </main>
     <aside>
 
@@ -74,21 +76,21 @@
     <footer id="footer">
         <div class="container col-xl-10 col-xxl-8 px-4 py-5">
             <div class="row align-items-center g-lg-5 py-5">
-              <div class="col-lg-7 text-center text-lg-start">
-                <h1 class="display-4 fw-bold lh-1 mb-3">Get in Touch!</h1>
-                <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
-              </div>
-              <div class="col-md-10 mx-auto col-lg-5">
-                    <form class="p-4 p-md-5 border rounded-3 bg-light">
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">Email address</label>
-                        </div>
-                        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
-                        <hr class="my-4">
-                        <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
-                    </form>
-              </div>
+                <div class="col-lg-7 text-center text-lg-start">
+                    <h1 class="display-4 fw-bold lh-1 mb-3">Get in Touch!</h1>
+                    <p class="col-lg-10 fs-4">Lets stay in touch!</p>
+                </div>
+                    <div class="col-md-10 mx-auto col-lg-5">
+                        <form class="p-4 p-md-5 border rounded-3 bg-light">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+                            <hr class="my-4">
+                            <small class="text-muted">By clicking Sign up, you agree to our privacy policy.</small>
+                        </form>
+                    </div>
             </div>
           </div>
         <p class="footer-credit">Created with ❤️ by Nickea Bennett.</p>
