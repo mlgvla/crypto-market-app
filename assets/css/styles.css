@@ -29,6 +29,18 @@
 }
 
 #results {
-    margin: 25px;
-    margin-bottom: 50px;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+}
+
+.coinImage img {
+    float: left;
+}
+
+#explore {
+    margin-bottom: 5px;
+    
 }

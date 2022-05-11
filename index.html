@@ -14,8 +14,8 @@
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand">Crypto Market App</a>
-          <form class="d-flex">
-                <input id="searchCoinID" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <form id="form-1" class="d-flex">
+                <input id="searchCoinID" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
                 <button class="btn btn-outline-primary" type="submit">Search</button>
           </form>
         </div>
@@ -35,10 +35,8 @@
                 </div>
             </div>
         </section>
-
         <div class="b-example-divider"></div>
-
-        <section class="search">
+        <section id="search">
             <div class="px-4 py-5 my-5 text-center">
                 <div id="explore">
                     <h1 class="display-5 fw-bold">Search for thousands of crypto coins.</h1>
@@ -46,8 +44,8 @@
                         <p class="lead mb-4">Get the latest price changes and market capitalization from your favorite crypto coins.</p>
                     </div>
                     <div class="d-grid gap-2 d-lg-flex justify-content-lg-center">
-                        <form class="d-flex">
-                            <input id="searchCoinID" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <form id="form-2"  class="d-flex">
+                            <input id="searchCoinID2" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
                             <button class="btn btn-outline-primary" type="submit">Search</button>
                         </form>
                     </div>
@@ -56,23 +54,19 @@
         </section>
         <section id="results">
             <div class="list-group">
+                <h6>Top 7 Trending Coins <= 24 Hours Ago.</h6>
                 <a href="#" class="list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">My Fav Crypto Coin</h5>
-                        <small>Market Cap Rank:</small>
+                        <img style="float: left; margin: 0px 15px 15px 0px;" src=""><h5 class="mb-1">My Fav Crypto Coin</h5>
+                        <small>Market Rank:</small>
                     </div>
                   <p class="mb-1">Some placeholder content in a paragraph.</p>
                   <small>And some small print.</small>
                 </a>
             </div>
         </section>
-
         <div class="b-example-divider"></div>
-
     </main>
-    <aside>
-
-    </aside>
     <footer id="footer">
         <div class="container col-xl-10 col-xxl-8 px-4 py-5">
             <div class="row align-items-center g-lg-5 py-5">
@@ -81,14 +75,16 @@
                     <p class="col-lg-10 fs-4">Lets stay in touch!</p>
                 </div>
                     <div class="col-md-10 mx-auto col-lg-5">
-                        <form class="p-4 p-md-5 border rounded-3 bg-light">
+                        <form class="p-4 p-md-5 border rounded-3 bg-light" action="mailto:email@domain.com" method="get" enctype="text/plain">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
                                 <label for="floatingInput">Email address</label>
                             </div>
-                            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
-                            <hr class="my-4">
-                            <small class="text-muted">By clicking Sign up, you agree to our privacy policy.</small>
+                            <div class="form-floating mb-3"></div>
+                                <button class="w-100 btn btn-lg btn-primary" type="submit">Send Message</button>
+                                <hr class="my-4">
+                                <small class="text-muted">By clicking Sign up, you agree to our privacy policy.</small>
+                            </div>
                         </form>
                     </div>
             </div>
