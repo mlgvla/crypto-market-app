@@ -1,3 +1,10 @@
+console.log(info)
+    function testData(info) {
+        let arrayNames = info;
+        let cat = arrayNames.filter(element => element.symbol.toLowerCase() === 'btc');
+        return cat;
+    }
+    testData(info)
 // Function to fetch API endpoint. Converted from Curl to Fetch.
 function fetchTrendingCoins() {
     return fetch("https://api.coingecko.com/api/v3/search/trending", {
@@ -110,10 +117,35 @@ function renderSearchCoins(coins) {
 document.getElementById("modalbutton").onclick = function() {modalData()};
 
 function modalData() {
-  document.getElementById("modalDiv").textContent = "YOU CLICKED ME!";
-  console.log(modalData)
-}
+    const { id,
+        symbol,
+        name,
+        image, 
+        current_price,
+        market_cap, 
+        market_cap_rank, 
+        high_24h, 
+        low_24h, 
+        price_change_24h, 
+        price_change_percentage_24h, 
+        price_change_percentage_1h_in_currency 
+    } = testData(info)[0]
 
+    document.getElementById("modalDiv").innerHTML = `
+    ${price_change_24h} 
+    ${id} 
+    <img src="${image}">
+    ${name}
+    ${current_price}
+    ${market_cap}
+    ${market_cap_rank}
+    ${symbol}
+    ${high_24h}
+    ${low_24h}
+    ${price_change_percentage_24h}
+    ${price_change_percentage_1h_in_currency}
+    `
+}
 // Call trendingCoins function and fetch API on page load. 
 document.addEventListener("DOMContentLoaded", function() {
     fetchTrendingCoins()
