@@ -65,7 +65,7 @@ function renderTrendingCoins(coins) {
         
         div.className = 'list-group';
         div.innerHTML = `
-        <a data-toggle="modal" href="javascript:void(0)" class="list-group-item data-bs-target="#exampleModal" list-group-item-action">
+        <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID">
                 <img src="${coin.item.small}">
             <div class="d-flex w-100 justify-content-between">
                     <h6 class="mb-1">${coin.item.name} (${coin.item.symbol})</h6>
@@ -73,10 +73,7 @@ function renderTrendingCoins(coins) {
             </div>
             <p class="mb-1">BTC Price: ${coin.item.price_btc}</p>
             <small>Score: ${coin.item.score}</small>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-        </a>
+        </button>
         `
         trendingResults.appendChild(div);
         
@@ -93,7 +90,7 @@ function renderSearchCoins(coins) {
         
         div.className = 'list-group';
         div.innerHTML = `
-        <a data-toggle="modal" href="" class="list-group-item list-group-item-action">
+        <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID">
                 <img src="${coin.thumb}">
             <div class="d-flex w-100 justify-content-between">
                 <div id="crypto-name">
@@ -103,7 +100,7 @@ function renderSearchCoins(coins) {
                 
             </div>
             
-        </a>
+        </button>
         `
         searchResults.appendChild(div);
         
