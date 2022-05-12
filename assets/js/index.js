@@ -65,8 +65,8 @@ function renderTrendingCoins(coins) {
         
         div.className = 'list-group';
         div.innerHTML = `
-        <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID">
-                <img src="${coin.item.small}">
+        <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
+                <img src="${coin.item.small}" alt="">
             <div class="d-flex w-100 justify-content-between">
                     <h6 class="mb-1">${coin.item.name} (${coin.item.symbol})</h6>
                 <small>Market Cap Rank: ${coin.item.market_cap_rank}</small>
@@ -90,7 +90,7 @@ function renderSearchCoins(coins) {
         
         div.className = 'list-group';
         div.innerHTML = `
-        <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID">
+        <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
                 <img src="${coin.thumb}">
             <div class="d-flex w-100 justify-content-between">
                 <div id="crypto-name">
@@ -107,6 +107,12 @@ function renderSearchCoins(coins) {
     });
 }
 
+document.getElementById("modalbutton").onclick = function() {modalData()};
+
+function modalData() {
+  document.getElementById("modalDiv").textContent = "YOU CLICKED ME!";
+  console.log(modalData)
+}
 
 // Call trendingCoins function and fetch API on page load. 
 document.addEventListener("DOMContentLoaded", function() {

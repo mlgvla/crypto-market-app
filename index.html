@@ -53,17 +53,6 @@
             </div>
         </section>
         <section id="results">
-            <div id="trendingResults" class="list-group">
-                <h6 id="h6TrendingResults">Top 7 Trending Coins 24 Hours Ago:</h6>
-                <a data-toggle="modal" href="javascript:void(0)" class="list-group-item data-bs-target="#modalID" list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                        <img src="#" alt=""><h5 class="mb-1">My Fav Crypto Coin</h5>
-                        <small>Market Rank:</small>
-                    </div>
-                    <p class="mb-1">Some placeholder content in a paragraph.</p>
-                    <small>And some small print.</small>
-                </a>
-            </div>
             <div id="searchResults" class="list-group">
                 <h6 id="h6SearchResults">Search Results:</h6>
                 <a data-toggle="modal" href="#javascript:void(0)"  class="list-group-item list-group-item-action">
@@ -75,10 +64,19 @@
                     <small>And some small print.</small>
                 </a>
             </div>
+            <div id="trendingResults" class="list-group">
+                <h6 id="h6TrendingResults">Top 7 Trending Coins 24 Hours Ago:</h6>
+                <button type="button" id="modalbutton" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
+                    <div class="d-flex w-100 justify-content-between">
+                        <img src="#" alt=""><h5 class="mb-1">My Fav Crypto Coin</h5>
+                        <small>Market Rank:</small>
+                    </div>
+                    <p id="pTag" class="mb-1">Some placeholder content in a paragraph.</p>
+                    <small>And some small print.</small>
+                </button>
+            </div>
         </section>
-        
         <div class="b-example-divider"></div>
-          
           <!-- Modal -->
           <div class="modal fade" id="modalID" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -87,7 +85,7 @@
                   <h5 class="modal-title" id="modalID">Modal title</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div id="modalDiv" class="modal-body">
                   ...
                 </div>
                 <div class="modal-footer">
@@ -97,7 +95,6 @@
               </div>
             </div>
           </div>
-        
     </main>
     <footer id="footer">
         <div class="container col-xl-10 col-xxl-8 px-4 py-5">
