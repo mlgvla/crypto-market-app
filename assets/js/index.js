@@ -65,12 +65,10 @@ function renderTrendingCoins(coins) {
         
         div.className = 'list-group';
         div.innerHTML = `
-        <a href="#" class="list-group-item list-group-item-action">
+        <a data-toggle="modal" href="#modalID" class="list-group-item list-group-item-action">
                 <img src="${coin.item.small}">
             <div class="d-flex w-100 justify-content-between">
-                <div id="crypto-name">
                     <h6 class="mb-1">${coin.item.name} (${coin.item.symbol})</h6>
-                </div>
                 <small>Market Cap Rank: ${coin.item.market_cap_rank}</small>
             </div>
             <p class="mb-1">BTC Price: ${coin.item.price_btc}</p>
@@ -92,7 +90,7 @@ function renderSearchCoins(coins) {
         
         div.className = 'list-group';
         div.innerHTML = `
-        <a href="#" class="list-group-item list-group-item-action">
+        <a data-toggle="modal" href="#modalID" class="list-group-item list-group-item-action">
                 <img src="${coin.thumb}">
             <div class="d-flex w-100 justify-content-between">
                 <div id="crypto-name">
@@ -112,3 +110,14 @@ function renderSearchCoins(coins) {
 document.addEventListener("DOMContentLoaded", function() {
     fetchTrendingCoins()
 });
+
+document.getElementById("hrefModal").addEventListener("click", modalData);
+
+function modalData(e) {
+    const input = document.getElementById('input');
+    input.addEventListener('click', function() {
+        document.getElementById("hrefModal").click(function(){
+            document.getElementById("modalID").modal();
+        });
+    });
+}

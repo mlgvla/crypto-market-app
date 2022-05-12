@@ -25,7 +25,7 @@
             <div class="container col-xxl-8 px-4 py-5">
                 <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
                     <div class="col-10 col-sm-8 col-lg-6">
-                        <img src="assets/images/bitcoin-ethereum.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+                        <img src="assets/images/bitcoin-ethereum.jpg" class="d-block mx-lg-auto img-fluid" alt="Cryptocurrency" width="700" height="500" loading="lazy">
                     </div>
                     <div class="col-lg-6">
                         <h1 class="display-5 fw-bold lh-1 mb-3">Welcome to Crypto Market App!</h1>
@@ -39,7 +39,7 @@
         <section id="search">
             <div class="px-4 py-5 my-5 text-center">
                 <div id="explore">
-                    <h1 class="display-5 fw-bold">Search for thousands of crypto coins.</h1>
+                    <h2 class="display-5 fw-bold">Search for thousands of crypto coins.</h2>
                     <div class="col-lg-6 mx-auto">
                         <p class="lead mb-4">Get the latest price changes and market capitalization from your favorite crypto coins.</p>
                     </div>
@@ -54,25 +54,25 @@
         </section>
         <section id="results">
             <div id="trendingResults" class="list-group">
-                <h6>Top 7 Trending Coins <= 24 Hours Ago.</h6>
-                <a href="#" class="list-group-item list-group-item-action">
+                <h6 id="h6TrendingResults">Top 7 Trending Coins 24 Hours Ago:</h6>
+                <a data-toggle="modal" href="#modalID" id="hrefModal" class="list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-between">
-                        <img style="float: left; margin: 0px 15px 15px 0px;" src=""><h5 class="mb-1">My Fav Crypto Coin</h5>
+                        <img src="#" alt=""><h5 class="mb-1">My Fav Crypto Coin</h5>
                         <small>Market Rank:</small>
                     </div>
-                  <p class="mb-1">Some placeholder content in a paragraph.</p>
-                  <small>And some small print.</small>
+                    <p class="mb-1">Some placeholder content in a paragraph.</p>
+                    <small>And some small print.</small>
                 </a>
             </div>
             <div id="searchResults" class="list-group">
-                <h6>Search Results.</h6>
-                <a href="#" class="list-group-item list-group-item-action">
+                <h6 id="h6SearchResults">Search Results:</h6>
+                <a data-toggle="modal" href="#modalID"  class="list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-between">
-                        <img style="float: left; margin: 0px 15px 15px 0px;" src=""><h5 class="mb-1">My Fav Crypto Coin</h5>
+                        <img src="#" alt=""><h5 class="mb-1">My Fav Crypto Coin</h5>
                         <small>Market Rank:</small>
                     </div>
-                  <p class="mb-1">Some placeholder content in a paragraph.</p>
-                  <small>And some small print.</small>
+                    <p class="mb-1">Some placeholder content in a paragraph.</p>
+                    <small>And some small print.</small>
                 </a>
             </div>
         </section>
@@ -85,22 +85,43 @@
                     <h1 class="display-4 fw-bold lh-1 mb-3">Get in Touch!</h1>
                     <p class="col-lg-10 fs-4">Lets stay in touch!</p>
                 </div>
-                    <div class="col-md-10 mx-auto col-lg-5">
-                        <form class="p-4 p-md-5 border rounded-3 bg-light" action="mailto:email@domain.com" method="get" enctype="text/plain">
-                            <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
-                                <label for="floatingInput">Email address</label>
-                            </div>
-                            <div class="form-floating mb-3"></div>
-                                <button class="w-100 btn btn-lg btn-primary" type="submit">Send Message</button>
-                                <hr class="my-4">
-                                <small class="text-muted">By clicking Sign up, you agree to our privacy policy.</small>
-                            </div>
-                        </form>
+                <div class="col-md-10 mx-auto col-lg-5">
+                    <form class="p-4 p-md-5 border rounded-3 bg-light" action="mailto:email@domain.com" method="get" enctype="text/plain">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                             <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3"></div>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Send Message</button>
+                        <hr class="my-4">
+                        <small class="text-muted">By clicking Sign up, you agree to our privacy policy.</small>
+                    </form>
                     </div>
             </div>
-          </div>
+        </div>
         <p class="footer-credit">Created with ❤️ by Nickea Bennett.</p>
     </footer>
+
+<!-- Modal -->
+<div class="modal fade" id="modalID" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+      
+    </div>
+</div>
+
 </body>
 </html>
