@@ -25,7 +25,7 @@ const topSearch = () => {
                 .then( response => response.json())
                 .then(json => {
         
-                    renderTrendingCoins(json.coins)
+                    renderSearchCoins(json.coins)
                 })
     });
 }
@@ -45,8 +45,8 @@ const mainSearch = () => {
              })
                 .then( response => response.json())
                 .then(json => {
-        
-                    renderTrendingCoins(json.coins)
+                    console.log(json.coins)
+                    renderSearchCoins(json.coins)
                 })
     });
 }
@@ -57,11 +57,12 @@ document.addEventListener('DOMContentLoaded', mainSearch);
 
 // Function to render top 7 trending coins on the DOM.
 function renderTrendingCoins(coins) {
-    console.log(coins)
-    const listGroup = document.querySelector('.list-group');
+    
+    const trendingResults = document.querySelector('#trendingResults');
     coins.forEach(coin => {
-        const div = document.createElement('div');
-        const results = document.querySelector('#results');
+
+        const div = document.createElement('div')
+        
         div.className = 'list-group';
         div.innerHTML = `
         <a href="#" class="list-group-item list-group-item-action">
@@ -72,16 +73,41 @@ function renderTrendingCoins(coins) {
                 </div>
                 <small>Market Cap Rank: ${coin.item.market_cap_rank}</small>
             </div>
-            <p class="mb-1">Price: ${coin.item.price_btc}</p>
+            <p class="mb-1">BTC Price: ${coin.item.price_btc}</p>
             <small>Score: ${coin.item.score}</small>
         </a>
         `
-        // div.textContent = <small>And some small print.</small>
-        listGroup.append(div);
+        trendingResults.appendChild(div);
         
     });
 }
- 
+
+// Function to render search results
+function renderSearchCoins(coins) {
+    
+    const searchResults = document.querySelector('#searchResults');
+    coins.forEach(coin => {
+       
+        const div = document.createElement('div')
+        
+        div.className = 'list-group';
+        div.innerHTML = `
+        <a href="#" class="list-group-item list-group-item-action">
+                <img src="${coin.thumb}">
+            <div class="d-flex w-100 justify-content-between">
+                <div id="crypto-name">
+                    <h6 class="mb-1">${coin.name} (${coin.symbol})</h6>
+                </div>
+                <small>Market Cap Rank: ${coin.market_cap_rank}</small>
+            </div>
+        </a>
+        `
+        searchResults.appendChild(div);
+        
+    });
+}
+
+
 // Call trendingCoins function and fetch API on page load. 
 document.addEventListener("DOMContentLoaded", function() {
     fetchTrendingCoins()
