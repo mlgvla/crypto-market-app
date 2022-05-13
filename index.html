@@ -29,14 +29,14 @@
                         <img src="assets/images/bitcoin-ethereum.jpg" class="d-block mx-lg-auto img-fluid" alt="Cryptocurrency" width="700" height="500" loading="lazy">
                     </div>
                     <div class="col-lg-6">
-                        <h1 class="display-5 fw-bold lh-1 mb-3">Welcome to Crypto Market App!</h1>
+                        <h1 class="display-5 fw-bold lh-1 mb-3">Welcome to Crypto Market App MVP!</h1>
                         <p class="lead">Your #1 source for Cryptocurrency news updates, and market cap.</p>
                         <a class="btn btn-primary" href="#explore" role="button">Explore Cryptos</a>
                   </div>
                 </div>
             </div>
         </section>
-        <div class="b-example-divider"></div>
+        <div class="b-divider"></div>
         <section id="search">
             <div class="px-4 py-5 my-5 text-center">
                 <div id="explore">
@@ -56,14 +56,14 @@
         <section id="results">
             <div id="searchResults" class="list-group">
                 <h6 id="h6SearchResults">Search Results:</h6>
-                <a data-toggle="modal" href="#javascript:void(0)"  class="list-group-item list-group-item-action">
+                <!-- <a data-toggle="modal" href="#javascript:void(0)"  class="list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-between">
                         <img src="#" alt=""><h5 class="mb-1">My Fav Crypto Coin</h5>
                         <small>Market Rank:</small>
                     </div>
                     <p class="mb-1">Some placeholder content in a paragraph.</p>
                     <small>And some small print.</small>
-                </a>
+                </a> -->
             </div>
             <div id="trendingResults" class="list-group">
                 <h6 id="h6TrendingResults">Top 7 Trending Coins 24 Hours Ago:</h6>
@@ -72,23 +72,54 @@
                         <img src="#" alt=""><h5 class="mb-1">My Fav Crypto Coin</h5>
                         <small>Market Rank:</small>
                     </div>
-                    <p id="pTag" class="mb-1">Some placeholder content in a paragraph.</p>
+                    <p id="pTag" class="mb-1">Some placeholder co in a paragraph.</p>
                     <small>And some small print.</small>
                 </button>
             </div>
         </section>
-        <div class="b-example-divider"></div>
+        <div class="b-divider"></div>
           <!-- Modal -->
           <div class="modal fade" id="modalID" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
               <div class="modal-content">
                 <div id="modalHeader" class="modal-header">
-                    <img id="coinImage" src="${image}" height="50px">
+                    <div id="coinImage" >
+                        <img src="" height="50px">
+                    </div>
                     <h5 class="modal-title" id="modalH5">Modal title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <!--Clean up HTML ^^^vvv-->
                 <div id="modalDiv" class="modal-body">
-                  ...
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                        </tbody>
+                      </table>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

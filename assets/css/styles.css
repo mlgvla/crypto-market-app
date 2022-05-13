@@ -1,4 +1,4 @@
-.b-example-divider {
+.b-divider {
     height: 3rem;
     background-color: rgba(0, 0, 0, .1);
     border: solid rgba(0, 0, 0, .15);
@@ -24,13 +24,13 @@
 #results {
     margin-top: 1%;
     margin-bottom: 5%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 30%;
+    margin-right: 30%;
     
 }
 
-.coinImage img {
-    float: left;
+img {
+    text-align: left;
 }
 
 #explore {

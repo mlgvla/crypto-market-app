@@ -83,9 +83,8 @@ function renderTrendingCoins(coins) {
                 <img src="${coin.item.small}" alt="">
             <div class="d-flex w-100 justify-content-between">
                     <h6 class="mb-1">${coin.item.name} (${coin.item.symbol})</h6>
-                <small>Market Cap Rank: ${coin.item.market_cap_rank}</small>
+                <small>Market Rank: ${coin.item.market_cap_rank}</small>
             </div>
-            <p class="mb-1">BTC Price: ${coin.item.price_btc}</p>
             <small>Score: ${coin.item.score}</small>
         </button>
         `
@@ -93,7 +92,6 @@ function renderTrendingCoins(coins) {
         
     });
 }
-
 // Function to render search results
 function renderSearchCoins(coins) {
     
@@ -101,7 +99,8 @@ function renderSearchCoins(coins) {
     coins.forEach(coin => {
        
         const div = document.createElement('div')
-        
+
+// Must convert to textContent
         div.className = 'list-group';
         div.innerHTML = `
         <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
@@ -111,9 +110,7 @@ function renderSearchCoins(coins) {
                     <h6 class="mb-1">${coin.name} (${coin.symbol})</h6>
                 </div>
                 <small>Market Cap Rank: ${coin.market_cap_rank}</small>
-                
             </div>
-            
         </button>
         `
         searchResults.appendChild(div);
@@ -124,44 +121,53 @@ document.getElementById("modalbutton").onclick = function() {modalData()};
 
 function modalData() {
     const { 
-        id,
         symbol,
         name,
         image, 
         current_price,
-        market_cap, 
         market_cap_rank, 
         high_24h, 
         low_24h, 
-        price_change_24h, 
-        price_change_percentage_24h, 
-        price_change_percentage_1h_in_currency 
     } = testData(info)[0]
 
     // Get modal IDs 
-    // const img = document.createElement('img')
-    // document.getElementById("modalHeader").textContent = `
-    //     img.append.${image}
-    // `
+    const coinImage = document.getElementById("coinImage")
+    const divCoinImage = document.createElement('div')
+        coinImage.innerHTML = `
+        <img src="${image}" height="30px">
+        `
+    
     document.getElementById("modalH5").textContent = `
         ${name} (${symbol})
     `
     const modalDiv2 = document.getElementById("modalDiv")
+    const div = document.createElement('div')
     //Get element ID via modal body
+    // Must convert to textContent
     modalDiv2.innerHTML = `
-    price change: ${price_change_24h} 
-    ${id} 
-    ${current_price}
-    ${market_cap}
-    ${market_cap_rank}
-    ${high_24h}
-    ${low_24h}
-    ${price_change_percentage_24h}
-    ${price_change_percentage_1h_in_currency}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Current Price</th>
+            <th scope="col">High <= 24hr</th>
+            <th scope="col">Low <= 24hr</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th scope="row">#${market_cap_rank}</th>
+            <td>$${current_price}</td>
+            <td>$${high_24h}</td>
+            <td>$${low_24h}</td>
+            </tr>
+        </tbody>
+    </table>
+     Chart coming soon!
     `
 }
 
-// Call trendingCoins function and fetch API on page load. 
+// Call fetchTrendingCoins function and fetch API on page load. 
 document.addEventListener("DOMContentLoaded", function() {
     fetchTrendingCoins()
 });
