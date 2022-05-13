@@ -16,7 +16,10 @@ function fetchTrendingCoins() {
     .then(json => renderTrendingCoins(json.coins));
 }
 
-// Top search Function to search for coins based on user input.
+/*
+Top search Function to search for coins based on user input. 
+Must update code to work with new API endpoint
+*/
 const topSearch = () => {
     const topSearchForm = document.querySelector('#form-1');
     topSearchForm.addEventListener('submit', (event) => {
@@ -37,7 +40,10 @@ const topSearch = () => {
     });
 }
 // Top search Function END!
-// Main search function to search for coins based on user input.
+/*
+Main search function to search for coins based on user input. 
+Must update code to work with new API endpoint
+*/
 const mainSearch = () => {
     const mainSearchForm = document.querySelector('#form-2');
     mainSearchForm.addEventListener('submit', (event) => {
@@ -71,6 +77,7 @@ function renderTrendingCoins(coins) {
         const div = document.createElement('div')
         
         div.className = 'list-group';
+        // Must convert to textContent
         div.innerHTML = `
         <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
                 <img src="${coin.item.small}" alt="">
@@ -110,14 +117,14 @@ function renderSearchCoins(coins) {
         </button>
         `
         searchResults.appendChild(div);
-        
     });
 }
 
 document.getElementById("modalbutton").onclick = function() {modalData()};
 
 function modalData() {
-    const { id,
+    const { 
+        id,
         symbol,
         name,
         image, 
@@ -131,21 +138,29 @@ function modalData() {
         price_change_percentage_1h_in_currency 
     } = testData(info)[0]
 
-    document.getElementById("modalDiv").innerHTML = `
-    ${price_change_24h} 
+    // Get modal IDs 
+    // const img = document.createElement('img')
+    // document.getElementById("modalHeader").textContent = `
+    //     img.append.${image}
+    // `
+    document.getElementById("modalH5").textContent = `
+        ${name} (${symbol})
+    `
+    const modalDiv2 = document.getElementById("modalDiv")
+    //Get element ID via modal body
+    modalDiv2.innerHTML = `
+    price change: ${price_change_24h} 
     ${id} 
-    <img src="${image}">
-    ${name}
     ${current_price}
     ${market_cap}
     ${market_cap_rank}
-    ${symbol}
     ${high_24h}
     ${low_24h}
     ${price_change_percentage_24h}
     ${price_change_percentage_1h_in_currency}
     `
 }
+
 // Call trendingCoins function and fetch API on page load. 
 document.addEventListener("DOMContentLoaded", function() {
     fetchTrendingCoins()
