@@ -17,23 +17,25 @@
     }
   }
 
-#footer {
-      text-align: center;
-}
-
-#results {
+  
+  #results {
     margin-top: 1%;
     margin-bottom: 5%;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 25%;
+    margin-right: 25%;
     
-}
-
-img {
+  }
+  
+  img {
     text-align: left;
-}
-
-#explore {
+  }
+  
+  #explore {
     margin-bottom: 5px;
-    
-}
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  
+  #footer {
+        text-align: center;
+  }

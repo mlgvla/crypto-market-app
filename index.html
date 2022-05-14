@@ -55,38 +55,38 @@
         </section>
         <section id="results">
             <div id="searchResults" class="list-group">
-                <h6 id="h6SearchResults">Search Results:</h6>
-                <!-- <a data-toggle="modal" href="#javascript:void(0)"  class="list-group-item list-group-item-action">
+                <h6>Search Results:</h6>
+                <button id="modalButton" type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
+                    <img id="searchCoinImage"src="">
                     <div class="d-flex w-100 justify-content-between">
-                        <img src="#" alt=""><h5 class="mb-1">My Fav Crypto Coin</h5>
-                        <small>Market Rank:</small>
+                            <h6 class="mb-1"></h6>
+                        <small></small>
                     </div>
-                    <p class="mb-1">Some placeholder content in a paragraph.</p>
-                    <small>And some small print.</small>
-                </a> -->
+                </button>
             </div>
             <div id="trendingResults" class="list-group">
-                <h6 id="h6TrendingResults">Top 7 Trending Coins 24 Hours Ago:</h6>
-                <button type="button" id="modalbutton" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
-                    <div class="d-flex w-100 justify-content-between">
-                        <img src="#" alt=""><h5 class="mb-1">My Fav Crypto Coin</h5>
-                        <small>Market Rank:</small>
-                    </div>
-                    <p id="pTag" class="mb-1">Some placeholder co in a paragraph.</p>
-                    <small>And some small print.</small>
-                </button>
+                <h6>Top 7 Trending Coins 24 Hours Ago:</h6>
+                <div>
+                    <button type="button" id="modalButton" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
+                        <div class="d-flex w-100 justify-content-between">
+                            <img src="#" alt="">
+                            <h6 id="coinName" class="mb-1">Coin name</h6>
+                            <small>Market Rank:</small>
+                        </div>
+                        <p id="pTag" class="mb-1">Some placeholder in a paragraph.</p>
+                        <small>And some small print.</small>
+                    </button>
+                </div>
             </div>
         </section>
         <div class="b-divider"></div>
           <!-- Modal -->
-          <div class="modal fade" id="modalID" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modalID" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
               <div class="modal-content">
                 <div id="modalHeader" class="modal-header">
-                    <div id="coinImage" >
-                        <img src="" height="50px">
-                    </div>
-                    <h5 class="modal-title" id="modalH5">Modal title</h5>
+                    <img id="modalCoinImage"  src="" height="50px">
+                    <h5 class="modal-title" id="modalH5">Coin title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!--Clean up HTML ^^^vvv-->
@@ -94,32 +94,21 @@
                     <table class="table table-hover">
                         <thead>
                           <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Rank</th>
+                            <th scope="col">Current Price</th>
+                            <th scope="col">High <= 24hr</th>
+                            <th scope="col">Low <= 24hr
+                            </th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
+                            <th scope="row">...</th>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
                         </tbody>
-                      </table>
+                    </table>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -127,7 +116,7 @@
                 </div>
               </div>
             </div>
-          </div>
+        </div>
     </main>
     <footer id="footer">
         <div class="container col-xl-10 col-xxl-8 px-4 py-5">
@@ -140,14 +129,14 @@
                     <form class="p-4 p-md-5 border rounded-3 bg-light" action="mailto:email@domain.com" method="get" enctype="text/plain">
                         <div class="form-floating mb-3">
                             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
-                             <label for="floatingInput">Email address</label>
+                            <label for="floatingInput">Email address</label>
                         </div>
                         <div class="form-floating mb-3"></div>
                         <button class="w-100 btn btn-lg btn-primary" type="submit">Send Message</button>
                         <hr class="my-4">
                         <small class="text-muted">By clicking Sign up, you agree to our privacy policy.</small>
                     </form>
-                    </div>
+                </div>
             </div>
         </div>
         <p class="footer-credit">Created with ❤️ by Nickea Bennett.</p>
