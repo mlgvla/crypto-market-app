@@ -18,7 +18,7 @@
           <form id="form-1" class="d-flex">
                 <input id="searchCoinID" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
                 <button class="btn btn-outline-primary" type="submit">Search</button>
-          </form>
+          </form>  
         </div>
       </nav>
     <main>
@@ -59,22 +59,36 @@
                 <button id="modalButton" type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
                     <img id="searchCoinImage"src="">
                     <div class="d-flex w-100 justify-content-between">
-                            <h6 class="mb-1"></h6>
-                        <small></small>
+                            <h6 id="coinName" class="mb-1">Coin name</h6>
+                        <small>Market Rank:</small>
                     </div>
                 </button>
             </div>
-            <div id="trendingResults" class="list-group">
+            <div class="list-group">
                 <h6>Top 7 Trending Coins 24 Hours Ago:</h6>
-                <div>
+                <div id="trendingResults">
                     <button type="button" id="modalButton" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
                         <div class="d-flex w-100 justify-content-between">
-                            <img src="#" alt="">
+                            <img id="coinImg"src="#" alt="">
                             <h6 id="coinName" class="mb-1">Coin name</h6>
                             <small>Market Rank:</small>
                         </div>
-                        <p id="pTag" class="mb-1">Some placeholder in a paragraph.</p>
-                        <small>And some small print.</small>
+                        <p id="pTag" class="mb-1">...</p>
+                        <small>...</small>
+                    </button>
+                </div>
+            </div>
+            <div class="list-group">
+                <h6>Top 7 Trending Coins 24 Hours Ago:</h6>
+                <div id="trendingResults2">
+                    <button type="button" id="modalButton2" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
+                        <div class="d-flex w-100 justify-content-between">
+                            
+                            <h6 id="coinName2" class="mb-1">Coin name</h6>
+                            <small>Market Rank:</small>
+                        </div>
+                        <p id="pTag2" class="mb-1">...</p>
+                        <small>...</small>
                     </button>
                 </div>
             </div>
@@ -85,11 +99,10 @@
             <div class="modal-dialog modal-dialog-centered modal-lg">
               <div class="modal-content">
                 <div id="modalHeader" class="modal-header">
-                    <img id="modalCoinImage"  src="" height="50px">
+                    <img id="modalCoinImage"  src="/assets/images/loadingIcon.png" height="30px">
                     <h5 class="modal-title" id="modalH5">Coin title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <!--Clean up HTML ^^^-->
                 <div id="modalDiv" class="modal-body">
                     <table class="table table-hover">
                         <thead>
@@ -109,6 +122,7 @@
                                 <td id="low24TD">...</td>
                         </tbody>
                     </table>
+                    Chart coming soon!
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -138,6 +152,9 @@
                     </form>
                 </div>
             </div>
+        </div>
+        <div>
+            <img id="footerTest" src="" >
         </div>
         <p class="footer-credit">Created with ❤️ by Nickea Bennett.</p>
     </footer>
