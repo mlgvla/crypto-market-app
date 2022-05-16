@@ -1,4 +1,44 @@
 // Function to fetch API endpoint. Converted from Curl to Fetch.
+// new api endpoint >>> testing
+function apiData() {
+    return fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=25&page=1&price_change_percentage=1h%2C%2024h%2C%207d%2C%2014d%2C%2030d%2C%20200d%2C%201y', { 
+
+        headers: {
+           Accept: "application/json"
+        }
+    })
+       .then( response => response.json())
+       .then(json => {
+        renderApiData(json)
+       }).catch(error => {
+           console.log(error)
+
+        })
+       
+}
+apiData()
+
+function renderApiData(json) {
+    const top25Results = document.querySelector('#top25Results');
+    
+    json.forEach(coin => {
+        const div = document.createElement('div')
+
+        div.innerHTML = `
+        <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
+                <img src="${coin.image}" alt="" height="30px">
+            <div class="d-flex w-100 justify-content-between">
+                    <h6 id="coinName" class="mb-1">${coin.name} (${coin.symbol})</h6>
+                <small>Market Rank: <span class="marketRankID">${coin.market_cap_rank}</span></small>
+            </div>
+            <small>Current Price: $${coin.current_price}</small>
+        </button>
+        `
+        top25Results.appendChild(div);
+        
+    });
+}
+
 function fetchTrendingCoins() {
     return fetch("https://api.coingecko.com/api/v3/search/trending", {
         headers: {
@@ -22,7 +62,7 @@ function renderTrendingCoins(coins) {
 
         div.innerHTML = `
         <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
-                <img src="${coin.item.small}" alt="">
+                <img src="${coin.item.small}" alt="" height="30px">
             <div class="d-flex w-100 justify-content-between">
                     <h6 id="coinName" class="mb-1">${coin.item.name} (${coin.item.symbol})</h6>
                 <small>Market Rank: <span class="marketRankID">${coin.item.market_cap_rank}</span></small>
@@ -95,22 +135,21 @@ function renderSearchCoins(coins) {
         // Must convert FROM innerHTML to textContent
         div.className = 'list-group';
         div.innerHTML = `
-        <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
-                <img src="${coin.thumb}">
-            <div class="d-flex w-100 justify-content-between">
-                    <h6 class="mb-1">${coin.name} (${coin.symbol})</h6>
-                <small>Market Rank: <span class="marketRankID">${coin.market_cap_rank}<span></small>
-            </div>
-        </button>
+        <button id="modalButton" type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
+                    <img id="searchCoinImage"src="${coin.thumb}">
+                    <div class="d-flex w-100 justify-content-between">
+                            <h6 id="coinName" class="mb-1">${coin.name} (${coin.symbol})</h6>
+                        <small>Market Rank: <span class="marketRankID">${coin.market_cap_rank}<span></small>
+                    </div>
+                </button>
         `
         searchResults.appendChild(div);
     });
 }
 
+// Test modal. Should populate data for each coin when clicked
 document.getElementById("modalButton").onclick = function() {modalData()};
-
 function modalData() {
-    
     const {            
         symbol,
         name,
@@ -145,59 +184,18 @@ function modalData() {
             $${low_24h}
         `
 }
-
-    function apiData() {
-        return fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=1&page=1&price_change_percentage=1h%2C%2024h%2C%207d%2C%2014d%2C%2030d%2C%20200d%2C%201y', { 
-
-            headers: {
-               Accept: "application/json"
-            }
-        })
-           .then( response => response.json())
-           .then(json => {
-            renderapiData(json)
-           }).catch(error => {
-               console.log(error)
-
-            })
-           
-    }
-    apiData()
-    
     // test
     function fetchData(info) {
         let arrayNames = info;
-        let cat = arrayNames.filter(element => element.symbol.toLowerCase() === 'btc');
-        return cat;
-    }
+        let results = arrayNames.filter(element => element.symbol.toLowerCase() === 'eth');
+        return results;
+    }   
     fetchData(info)
     
     // Call fetchTrendingCoins function and fetch API on page load. 
     document.addEventListener("DOMContentLoaded", function() {
                 fetchTrendingCoins()
     });
-
-
-    function renderapiData(json) {
-        const trendingResults2 = document.querySelector('#trendingResults2');
-        
-        json.forEach(coin => {
-            const div = document.createElement('div')
-    
-            div.innerHTML = `
-            <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
-                    <img src="${coin.image}" alt="" height="30px">
-                <div class="d-flex w-100 justify-content-between">
-                        <h6 id="coinName" class="mb-1">${coin.name} (${coin.symbol})</h6>
-                    <small>Market Rank: <span class="marketRankID">${coin.market_cap_rank}</span></small>
-                </div>
-                <small>Score: ${coin.score}</small>
-            </button>
-            `
-            trendingResults.appendChild(div);
-            
-        });
-    }
     // function renderSearchCoins(coins) {
     
     //     const searchResults = document.querySelector('#searchResults');

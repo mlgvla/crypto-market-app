@@ -54,8 +54,8 @@
             </div>
         </section>
         <section id="results">
+            <h6>Search Results:</h6>
             <div id="searchResults" class="list-group">
-                <h6>Search Results:</h6>
                 <button id="modalButton" type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
                     <img id="searchCoinImage"src="">
                     <div class="d-flex w-100 justify-content-between">
@@ -65,31 +65,9 @@
                 </button>
             </div>
             <div class="list-group">
-                <h6>Top 7 Trending Coins 24 Hours Ago:</h6>
-                <div id="trendingResults">
-                    <button type="button" id="modalButton" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
-                        <div class="d-flex w-100 justify-content-between">
-                            <img id="coinImg"src="#" alt="">
-                            <h6 id="coinName" class="mb-1">Coin name</h6>
-                            <small>Market Rank:</small>
-                        </div>
-                        <p id="pTag" class="mb-1">...</p>
-                        <small>...</small>
-                    </button>
-                </div>
-            </div>
-            <div class="list-group">
-                <h6>Top 7 Trending Coins 24 Hours Ago:</h6>
-                <div id="trendingResults2">
-                    <button type="button" id="modalButton2" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
-                        <div class="d-flex w-100 justify-content-between">
-                            
-                            <h6 id="coinName2" class="mb-1">Coin name</h6>
-                            <small>Market Rank:</small>
-                        </div>
-                        <p id="pTag2" class="mb-1">...</p>
-                        <small>...</small>
-                    </button>
+                <h6>Top 25 Search results:</h6>
+                <div id="top25Results">
+                
                 </div>
             </div>
         </section>
@@ -122,7 +100,14 @@
                                 <td id="low24TD">...</td>
                         </tbody>
                     </table>
-                    Chart coming soon!
+                    <strong>Chart coming soon!</strong>
+                    <hr>
+                    <div class="list-group">
+                        <h6>Top 7 Trending Coins 24 Hours Ago:</h6>
+                        <div id="trendingResults">
+                           
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
