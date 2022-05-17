@@ -25,8 +25,8 @@ function renderApiData(json) {
         const div = document.createElement('div')
 
         div.innerHTML = `
-        <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
-                <img src="${coin.image}" alt="" height="30px">
+        <button id="modalButton" type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
+                <img id="searchCoinImage" src="${coin.image}" alt="" height="30px">
             <div class="d-flex w-100 justify-content-between">
                     <h6 id="coinName" class="mb-1">${coin.name} (${coin.symbol})</h6>
                 <small>Market Rank: <span class="marketRankID">${coin.market_cap_rank}</span></small>
@@ -52,11 +52,10 @@ function fetchTrendingCoins() {
 
 // Function to render top 7 trending coins on the DOM.
 function renderTrendingCoins(coins) {
-    const trendingResults = document.querySelector('#trendingResults');
+    const trendingResults = document.getElementById('#trendingResults');
     
     coins.forEach(coin => {
         const div = document.createElement('div')
-        
         // div.className = 'list-group';
         // Must convert FROM innerHTML to textContent
 
@@ -135,7 +134,7 @@ function renderSearchCoins(coins) {
         // Must convert FROM innerHTML to textContent
         div.className = 'list-group';
         div.innerHTML = `
-        <button id="modalButton" type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
+                <button id="modalButton" type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
                     <img id="searchCoinImage"src="${coin.thumb}">
                     <div class="d-flex w-100 justify-content-between">
                             <h6 id="coinName" class="mb-1">${coin.name} (${coin.symbol})</h6>
