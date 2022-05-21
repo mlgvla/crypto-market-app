@@ -79,12 +79,12 @@ const mainSearch = () => {
     mainSearchForm.addEventListener('submit', (event) => {
         event.preventDefault()
         const userInput = document.querySelector('input#searchCoinID2');
-        fetch(`https://api.coingecko.com/api/v3/search?query=${userInput.value}`, { 
+            fetch(`https://api.coingecko.com/api/v3/search?query=${userInput.value}`, { 
 
                  headers: {
                     Accept: "application/json"
                  }
-             })
+            })
                 .then( response => response.json())
                 .then(json => {
                     renderSearchCoins(json.coins)
@@ -213,7 +213,7 @@ const resetSearch = () => {
     resetButton.addEventListener('click', () => {
         const searchResults = document.getElementById('searchResults')
         searchResults.innerHTML = " ";
-        const clearInput = document.getElementById
+        const form2 = document.getElementById('form-2').reset()
     })
 }
 
