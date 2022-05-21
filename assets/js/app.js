@@ -1,7 +1,7 @@
 // Function to fetch API endpoint. Converted from Curl to Fetch.
 // new api endpoint >>> testing
-function apiData() {
-    let fetchData = fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=25&page=1&price_change_percentage=1h%2C%2024h%2C%207d%2C%2014d%2C%2030d%2C%20200d%2C%201y', { 
+const apiData = () => {
+    return fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&price_change_percentage=1h%2C%2024h%2C%207d%2C%2014d%2C%2030d%2C%20200d%2C%201y', { 
 
         headers: {
            Accept: "application/json"
@@ -16,12 +16,11 @@ function apiData() {
            console.log(error)
 
         })
-       return fetchData
 }
 apiData()
 
 // Function to render API data on the DOM
-function renderApiData(json) {
+const renderApiData = (json) => {
     const top25Results = document.querySelector('#top25Results');
     
     json.forEach(coin => {
@@ -41,7 +40,6 @@ function renderApiData(json) {
             modalData(coin)
         })
         top25Results.appendChild(div);
-        // onclick="modalData()"
     });
 }
 
@@ -92,21 +90,19 @@ const mainSearch = () => {
                     renderSearchCoins(json.coins)
                 })
     });
-    
 }
 mainSearch()
 // Main search fetch Function END!
 
 // Function to render search results
 function renderSearchCoins(coins) {
-    
     const searchResults = document.querySelector('#searchResults');
     coins.forEach(coin => {
         const div = document.createElement('div')
         // Must convert FROM innerHTML to textContent
         div.className = 'list-group';
         div.innerHTML = `
-                <button data-symbol="${coin.symbol}" id="modalButton" type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID" onclick="modalData()">
+                <button data-symbol="${coin.symbol}" id="modalButton" type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalID">
                     <img id="searchCoinImage"src="${coin.thumb}">
                     <div class="d-flex w-100 justify-content-between">
                             <h6 id="coinName" class="mb-1">${coin.name} (${coin.symbol})</h6>
@@ -115,7 +111,7 @@ function renderSearchCoins(coins) {
                 </button>
         `
         div.querySelector('button').addEventListener('click', (e) => {
-            modalData(coin)
+            searchModalData(coin)
         })
         searchResults.appendChild(div);
     });
@@ -158,6 +154,27 @@ function modalData({
         `
 }
 
+function searchModalData({
+    name,  
+    symbol, 
+    thumb, 
+    market_cap_rank, 
+}) {
+    const modalHeader = document.getElementById('modalHeader')
+    const modalCoinTitle = document.getElementById('modalH5')
+        modalCoinTitle.textContent = `
+            ${name} (${symbol})
+        `
+    const modalCoinImage = document.getElementById('modalCoinImage')
+        modalCoinImage.src = `
+            ${thumb}
+        `
+    const marketCapRankTD = document.getElementById('marketCapRankTD')
+        marketCapRankTD.textContent = `
+            ${market_cap_rank}
+        `
+}
+
 function fetchTrendingCoins() {
     return fetch("https://api.coingecko.com/api/v3/search/trending", {
         headers: {
@@ -168,10 +185,10 @@ function fetchTrendingCoins() {
     .then(json => renderTrendingCoins(json.coins));
     
 }
+
 // Function to render top 7 trending coins on Modal.
 function renderTrendingCoins(coins) {
     const trendingResults = document.querySelector('#trendingResults');
-    
     coins.forEach(coin => {
         const div = document.createElement('div')
         div.className = 'list-group';
@@ -190,6 +207,16 @@ function renderTrendingCoins(coins) {
         
     });
 }
+
+const resetSearch = () => {
+    const resetButton = document.getElementById('resetButton');
+    resetButton.addEventListener('click', () => {
+        const searchResults = document.getElementById('searchResults')
+        searchResults.innerHTML = " ";
+        const clearInput = document.getElementById
+    })
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     fetchTrendingCoins()
 });

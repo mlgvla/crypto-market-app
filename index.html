@@ -41,13 +41,17 @@
                 <div id="explore">
                     <h2 class="display-5 fw-bold">Search for thousands of crypto coins.</h2>
                     <div class="col-lg-6 mx-auto">
-                        <p class="lead mb-4">Get the latest price changes and market capitalization from your favorite crypto coins. We can provide up to 50 coins per minute.</p>
+                        <p class="lead mb-4">
+                            Get the latest price changes and market capitalization from your favorite crypto coins. 
+                            We can provide up to <strong>50 coins per minute</strong>.
+                        </p>
                     </div>
                     <div class="d-grid gap-2 d-lg-flex justify-content-lg-center">
                         <form id="form-2"  class="d-flex">
                             <input id="searchCoinID2" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
                             <button class="btn btn-outline-primary" type="submit">Search</button>
                         </form>
+                        <button id="resetButton" class="btn btn-outline-primary" type="submit" onclick="resetSearch()">Reset</button>
                     </div>
                 </div>
             </div>
@@ -55,9 +59,8 @@
         <section id="results">
             <h6>Search Results:</h6>
             <div id="searchResults" class="list-group">
-                
             </div>
-            <h6>Top 25 Search results:</h6>
+            <h6 class="top25H6">Top 10 results:</h6>
             <div class="list-group">
                 <div id="top25Results">
                 
@@ -70,7 +73,7 @@
             <div class="modal-dialog modal-dialog-centered modal-lg">
               <div class="modal-content">
                 <div id="modalHeader" class="modal-header">
-                    <img id="modalCoinImage"  src="/assets/images/loadingIcon.png" height="30px">
+                    <img id="modalCoinImage"  src="./assets/images/loadingIcon.png" height="30px">
                     <h5 class="modal-title" id="modalH5">Coin title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
