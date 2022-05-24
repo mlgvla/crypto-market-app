@@ -183,13 +183,19 @@ function fetchTrendingCoins() {
     })
     .then(resp => resp.json())
     .then(json => renderTrendingCoins(json.coins));
+  
     
 }
 
 // Function to render top 7 trending coins on Modal.
 function renderTrendingCoins(coins) {
+    console.log(coins)  // code assessment
+    coins.sort(function(a, b){ // code assessment
+        return a.item.market_cap_rank - b.item.market_cap_rank
+    })
+    console.log(coins) // code assessment
     const trendingResults = document.querySelector('#trendingResults');
-    coins.forEach(coin => {
+    coins.forEach(coin => { // modified for code assessment - coins has been sorted
         const div = document.createElement('div')
         div.className = 'list-group';
         // Must convert FROM innerHTML to textContent
